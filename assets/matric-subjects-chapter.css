@@ -84,7 +84,10 @@
         flex-direction: column !important;
         gap: 20px !important;
     }
-
+.container, .grid-layout, main, .viewer-box {
+  overflow-x: hidden;
+  max-width: 100%;
+}
 }
 @media (max-width: 768px) {
     /* Move sidebar BELOW content on mobile */

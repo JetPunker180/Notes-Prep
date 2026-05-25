@@ -84,13 +84,19 @@
         flex-direction: column !important;
         gap: 20px !important;
     }
-    
-    /* Move sidebar above content on mobile */
+
+}
+@media (max-width: 768px) {
+    /* Move sidebar BELOW content on mobile */
     aside {
-        order: -1 !important;
+        order: 1 !important;
+    }
+    
+    /* Make sure main content appears first */
+    main {
+        order: 0 !important;
     }
 }
-
 /* Fix Section Cards for Mobile */
 @media (max-width: 768px) {
     .section-card {

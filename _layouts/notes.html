@@ -151,34 +151,6 @@
             "@id": "{{ page.url | absolute_url }}#breadcrumb"
           }
         },
-		{
-		  "@type": "BreadcrumbList",
-		  "@id": "{{ page.url | absolute_url }}#breadcrumb",
-		  "itemListElement": [
-			{
-			  "@type": "ListItem",
-			  "position": 1,
-			  "name": "Home",
-			  "item": "https://notesprep.com/"
-			}
-			{%- assign url_parts = page.url | split: '/' -%}
-			{%- assign cumulative_path = "" -%}
-			{%- for part in url_parts -%}
-			  {%- if part != "" and part != "index.html" and forloop.index <= 4 -%}
-				{%- assign cumulative_path = cumulative_path | append: '/' | append: part -%}
-				{%- unless forloop.first -%}
-				  ,
-				{%- endunless -%}
-				{
-				  "@type": "ListItem",
-				  "position": {{ forloop.index | plus: 1 }},
-				  "name": "{{ part | capitalize | replace: '-', ' ' }}",
-				  "item": "https://notesprep.com{{ cumulative_path }}"
-				}
-			  {%- endif -%}
-			{%- endfor -%}
-		  ]
-		},
         {
           "@type": "SiteNavigationElement",
           "@id": "https://notesprep.com/#main-nav",
@@ -269,7 +241,7 @@
 
     <link rel="preconnect" href="https://www.google-analytics.com">
     
-    <link href="https:notesprep.com/../../../assets/matric-subjects-chapter.css" rel="stylesheet"/>
+    <link href="https://notesprep.com/../../../assets/matric-subjects-chapter.css" rel="stylesheet"/>
 <link href="https://notesprep.com/logo.svg" rel="icon" type="image/x-icon"/>
 </head><body class="gjs-t-body body-root" id="i5f1">
 

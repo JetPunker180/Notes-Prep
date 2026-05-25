@@ -95,7 +95,20 @@
     {% comment %}
       STEP 7: Canonical URL
     {% endcomment %}
-    <link rel="canonical" href="{{ page.url | absolute_url }}">
+		<link rel="canonical" href="{{ page.url | absolute_url }}">
+		<!-- MathJax for rendering mathematical expressions -->
+	<script>
+	  MathJax = {
+		tex: {
+		  inlineMath: [['$', '$'], ['\\(', '\\)']],
+		  displayMath: [['$$', '$$'], ['\\[', '\\]']]
+		},
+		options: {
+		  skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+		}
+	  };
+	</script>
+
     
     {% comment %}
       STEP 8: Alternate language versions (if applicable)

@@ -620,5 +620,31 @@ document.addEventListener('DOMContentLoaded', generateBreadcrumbs);
     });
 })();
 </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Fix all MathJax containers
+    var mjxContainers = document.querySelectorAll('mjx-container, .MathJax, .MathJax_Preview');
+    mjxContainers.forEach(function(el) {
+      el.style.maxWidth = '100%';
+      el.style.overflowX = 'auto';
+      el.style.display = 'inline-block';
+    });
+    
+    // Fix the iframe specifically
+    var iframe = document.querySelector('.main-pdf-viewer, .viewer-box iframe');
+    if (iframe) {
+      iframe.style.width = '100%';
+      iframe.style.maxWidth = '100%';
+    }
+    
+    // Fix all parent containers
+    var containers = document.querySelectorAll('.container, .grid-layout, main, .viewer-box');
+    containers.forEach(function(el) {
+      el.style.overflowX = 'hidden';
+      el.style.maxWidth = '100%';
+      el.style.boxSizing = 'border-box';
+    });
+  });
+</script>
 </body>
 </html>

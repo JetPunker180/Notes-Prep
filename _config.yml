@@ -1,0 +1,10 @@
+title: NotesPrep 
+description: Free educational notes for Pakistani students 
+url: "https://notes.yourdomain.com" 
+baseurl: "" 
+markdown: kramdown 
+highlighter: rouge 
+permalink: pretty 
+lsi: false 
+safe: true 
+incremental: false 

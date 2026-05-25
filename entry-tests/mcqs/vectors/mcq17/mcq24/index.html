@@ -1,0 +1,143 @@
+---
+layout: default
+---
+
+<script src="./../data.js"></script>
+<script src="./../question-script.js"></script>
+
+	
+  	<script src="https://notesprep.com/script.js" id="ihiexn"></script>
+    <link rel="stylesheet" href="./../style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<link rel="icon" type="image/x-icon" href="https://notesprep.com/logo.svg">
+</head><body id="i5f1" class="gjs-t-body body-root">
+
+        <header id="i90df" class="header">
+
+    </header>
+    <section id="secondary" class="secondary-notes-section"><div id="breadcrumb"></div>
+      <div class="section-container">
+	  <h1 class="entry-test-heading">NET Maths Mock Test 1</h1>
+	  <div id ="q123" class="question-container"><b>If you are seeing this, it means javascript in your browser is disabled. Click <a href="https://www.enable-javascript.com/">here</a> to learn how to enable it.</b>
+	  </div>
+	  </div>
+    </section>
+	    <section id="about" class="about-section">
+
+    </section>
+  <footer id="i6lnig" class="footer">
+
+      </footer>
+<script>function generateBreadcrumbs() {
+    const breadcrumbNav = document.getElementById('breadcrumb');
+    if (!breadcrumbNav) return;
+
+    let path = window.location.pathname.replace('index.html', '');
+    
+    const pathSegments = path.split('/').filter(segment => {
+        const s = segment.toLowerCase();
+        // This line filters out empty parts, drive letters (e:), and backup folders
+        return s !== "" && 
+               !s.includes(':') && 
+               s !== 'backup' && 
+               s !== 'notesprep'; // Skips the folder name if you're testing inside a folder
+    });
+    
+    let breadcrumbHTML = '<ol class="breadcrumb-list">';
+    breadcrumbHTML += `<li class="breadcrumb-item"><a href="/">Home</a></li>`;
+    
+    let currentPath = '';
+    pathSegments.forEach((segment, index) => {
+        currentPath += `/${segment}`;
+        const isLast = index === pathSegments.length - 1;
+        
+        // Clean up Review_exercise_10 -> Review Exercise 10
+        let displayName = segment.replace(/[_-]/g, ' ')
+                                 .split(' ')
+                                 .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                                 .join(' ');
+
+        breadcrumbHTML += `<li class="separator">/</li>`;
+
+        if (isLast) {
+            breadcrumbHTML += `<li class="breadcrumb-item active" aria-current="page">${displayName}</li>`;
+        } else {
+            breadcrumbHTML += `<li class="breadcrumb-item"><a href="${currentPath}/">${displayName}</a></li>`;
+        }
+    });
+    
+    breadcrumbHTML += '</ol>';
+    breadcrumbNav.innerHTML = breadcrumbHTML;
+}
+
+document.addEventListener('DOMContentLoaded', generateBreadcrumbs);
+</script>    
+
+    <script data-scope="mobile-nav" id="ifz1ty">
+      (function() {
+        const toggleBtn = document.querySelector('[data-js="hamburger"]');
+        const nav = document.getElementById('i32qq');
+        if (!toggleBtn || !nav) return;
+
+        function toggleMenu() {
+          const isOpen = nav.classList.toggle('open');
+          toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+        toggleBtn.addEventListener('click', toggleMenu);
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+          const withinHeader = e.target.closest('#is0gk');
+          if (!withinHeader && nav.classList.contains('open')) {
+            nav.classList.remove('open');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+        // Close on Esc
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && nav.classList.contains('open')) {
+            nav.classList.remove('open');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            toggleBtn.focus();
+          }
+        });
+      })();
+    </script>
+    <script data-scope="mobile-images" id="itb5y5">
+      (function() {
+        const imgs = document.querySelectorAll('img[data-mobile-src]');
+        if (!imgs.length) return;
+
+        function swapForViewport() {
+          const isMobile = window.matchMedia('(max-width: 480px)').matches;
+          imgs.forEach(img => {
+            const desktop = img.getAttribute('data-desktop-src');
+            const mobile = img.getAttribute('data-mobile-src');
+            if (!desktop || !mobile) return;
+            // Keep desktop unchanged; swap only on mobile
+            const current = img.getAttribute('src') || '';
+            if (isMobile) {
+              if (current !== mobile) img.setAttribute('src', mobile);
+              // Ensure below-the-fold images stay lazy on mobile
+              if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+            } else {
+              if (current !== desktop) img.setAttribute('src', desktop);
+              // Restore fetchpriority for hero if present
+              if (img.id === 'izhe1') {
+                img.setAttribute('fetchpriority', 'high');
+                img.removeAttribute('loading');
+              }
+            }
+          });
+        }
+        // Initialize and update on resize
+        swapForViewport();
+        let rAF;
+        window.addEventListener('resize', () => {
+          cancelAnimationFrame(rAF);
+          rAF = requestAnimationFrame(swapForViewport);
+        });
+      })();
+    </script>
+
+  </body>
+</html>

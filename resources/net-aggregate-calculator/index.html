@@ -1,0 +1,98 @@
+---
+layout: default
+---
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+<link href="../../style.css" rel="stylesheet">
+</head><body class="body-root">
+
+    <main class="calc-wrapper">
+        <div class="calc-container">
+            <div class="calc-header">
+                <h1>NUST Aggregate Calculator</h1>
+                <p>Weightage: 75% NET | 15% HSSC | 10% Matric</p>
+            </div>
+
+            <div class="calc-row">
+                <div class="input-group">
+                    <label>Matric Obtained</label>
+                    <input type="number" id="mObtained" placeholder="e.g. 1045">
+                </div>
+                <div class="input-group">
+                    <label>Matric Total</label>
+                    <input type="number" id="mTotal" value="1100">
+                </div>
+            </div>
+
+            <div class="calc-row">
+                <div class="input-group">
+                    <label>HSSC-I Obtained</label>
+                    <input type="number" id="hObtained" placeholder="e.g. 480">
+                </div>
+                <div class="input-group">
+                    <label>HSSC-I Total</label>
+                    <input type="number" id="hTotal" value="520">
+                </div>
+            </div>
+
+            <div class="input-group full-width">
+                <label>NET Score (Out of 200)</label>
+                <input type="number" id="netScore" placeholder="Enter your score">
+            </div>
+
+            <button class="calc-btn" onclick="runNustCalc()">Calculate Aggregate</button>
+
+            <div id="resultBox" class="result-box">
+                <span class="feedback-pill" id="pillText">Result</span>
+                <div class="result-value" id="finalResult">0%</div>
+                <p id="adviceText" style="color: #4b5563; font-size: 0.95rem;"></p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function runNustCalc() {
+            // Get values
+            const mObt = parseFloat(document.getElementById('mObtained').value);
+            const mTot = parseFloat(document.getElementById('mTotal').value);
+            const hObt = parseFloat(document.getElementById('hObtained').value);
+            const hTot = parseFloat(document.getElementById('hTotal').value);
+            const net = parseFloat(document.getElementById('netScore').value);
+
+            // Validation
+            if ([mObt, mTot, hObt, hTot, net].some(isNaN)) {
+                alert("Please enter valid numbers in all fields.");
+                return;
+            }
+
+            // Calculations
+            const matricWeight = (mObt / mTot) * 10;
+            const hsscWeight = (hObt / hTot) * 15;
+            const netWeight = (net / 200) * 75;
+
+            const totalAggregate = (matricWeight + hsscWeight + netWeight).toFixed(3);
+
+            // UI Display
+            const resultBox = document.getElementById('resultBox');
+            const resultVal = document.getElementById('finalResult');
+            const advice = document.getElementById('adviceText');
+            const pill = document.getElementById('pillText');
+
+            resultVal.innerText = totalAggregate + "%";
+            resultBox.style.display = 'block';
+
+            // Advice Logic
+            if (totalAggregate >= 80) {
+                pill.innerText = "Safe Zone";
+                advice.innerText = "Excellent score! You have a high chance for CS, SE, or Mechanical at SEECS/EME.";
+            } else if (totalAggregate >= 72) {
+                pill.innerText = "Good Chance";
+                advice.innerText = "Good aggregate. You are competitive for most Engineering and Social Science programs.";
+            } else {
+                pill.innerText = "Improvement Needed";
+                advice.innerText = "Consider improving your NET score in the next series to secure admission in top programs.";
+            }
+        }
+    </script>
+</body>
+</html>

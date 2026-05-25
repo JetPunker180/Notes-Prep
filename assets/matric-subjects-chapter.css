@@ -154,11 +154,7 @@
         font-size: 0.875rem !important;
         line-height: 1.5 !important;
     }
-    
-    .section-card p strong {
-        display: block !important;
-        margin-bottom: 5px !important;
-    }
+
 }
 
 /* Fix Aside/Sidebar for Mobile */

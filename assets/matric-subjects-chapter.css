@@ -44,161 +44,11 @@
         .btn-premium { background: #1e40af; color: white; padding: 16px 40px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 12px; box-shadow: 0 10px 15px -3px rgba(30, 64, 175, 0.4); transition: 0.3s; }
         .btn-premium:hover { background: #1e3a8a; transform: scale(1.05); }
 /* ============================================
-   MOBILE-FRIENDLY CSS FOR NOTESPREP
-   Enhanced version - Add this to your existing CSS
+   ADDITIONAL MOBILE RESPONSIVE STYLES
+   Only for elements not already formatted
    ============================================ */
 
-/* Mobile-First Base Improvements */
-* {
-    -webkit-tap-highlight-color: transparent;
-}
-
-/* Better Touch Targets for Mobile */
-@media (max-width: 768px) {
-    button, 
-    .btn-premium,
-    .nav-link,
-    .footer-link,
-    .card-button,
-    .resource-download,
-    .exercise-link,
-    .chapter-link,
-    .cta-button,
-    .primary-action,
-    .secondary-action,
-    .submit-button,
-    .alternate-contact,
-    .newsletter-button,
-    .social-link {
-        min-height: 48px;
-        min-width: 48px;
-        cursor: pointer;
-    }
-    
-    /* Prevent zoom on form inputs */
-    input, 
-    select, 
-    textarea {
-        font-size: 16px !important;
-    }
-    
-    /* Improve readability */
-    body {
-        font-size: 16px;
-        line-height: 1.6;
-    }
-    
-    /* Better spacing for headings */
-    h1 {
-        font-size: 1.75rem !important;
-        line-height: 1.3 !important;
-    }
-    
-    h2 {
-        font-size: 1.35rem !important;
-        line-height: 1.35 !important;
-    }
-    
-    h3 {
-        font-size: 1.15rem !important;
-    }
-}
-
-/* Enhanced Header for Mobile */
-.header-container {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
-}
-
-@media (max-width: 768px) {
-    .header-container {
-        padding: 0.75rem 1rem !important;
-    }
-    
-    .brand-name {
-        font-size: 1.25rem !important;
-    }
-    
-    .brand-icon {
-        width: 32px;
-        height: 32px;
-    }
-}
-
-/* Mobile Navigation - Hamburger Menu */
-@media (max-width: 768px) {
-    .hamburger-btn {
-        display: inline-flex !important;
-        align-items: center;
-        justify-content: center;
-        background: white;
-        border: 1px solid #e2e8f0;
-        border-radius: 0.5rem;
-        padding: 0.5rem 0.75rem;
-        cursor: pointer;
-        z-index: 1001;
-    }
-    
-    .primary-navigation {
-        position: fixed !important;
-        top: 0 !important;
-        right: -100% !important;
-        width: 80% !important;
-        max-width: 320px !important;
-        height: 100vh !important;
-        background: white !important;
-        flex-direction: column !important;
-        align-items: stretch !important;
-        gap: 0 !important;
-        padding: 5rem 1.5rem 2rem !important;
-        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1) !important;
-        z-index: 1000 !important;
-        overflow-y: auto !important;
-    }
-    
-    .primary-navigation.open {
-        right: 0 !important;
-    }
-    
-    .nav-link {
-        padding: 1rem 0 !important;
-        border-bottom: 1px solid #e2e8f0 !important;
-        font-size: 1rem !important;
-        display: block !important;
-        width: 100% !important;
-    }
-    
-    .nav-link:active {
-        background: #f1f5f9;
-        border-radius: 0.5rem;
-        padding-left: 0.75rem;
-    }
-    
-    /* Menu Overlay */
-    .menu-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.5);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s;
-        z-index: 999;
-    }
-    
-    .menu-overlay.active {
-        opacity: 1;
-        visibility: visible;
-    }
-}
-
-/* Hero Section Mobile Optimization */
+/* Fix Hero Section for Mobile */
 @media (max-width: 768px) {
     .hero-premium {
         padding: 40px 16px !important;
@@ -212,21 +62,17 @@
     .hero-subtitle {
         font-size: 1rem !important;
         line-height: 1.5 !important;
+        margin-bottom: 1.5rem !important;
     }
     
     .breadcrumb-mini li {
-        font-size: 0.75rem !important;
+        font-size: 0.7rem !important;
         padding: 0.5rem !important;
         margin-bottom: 1rem !important;
     }
-    
-    .breadcrumb-list {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
 }
 
-/* Grid Layout - Mobile First */
+/* Fix Container and Grid Layout for Mobile */
 @media (max-width: 768px) {
     .container {
         padding: 20px 16px !important;
@@ -238,37 +84,37 @@
         gap: 20px !important;
     }
     
+    /* Move sidebar above content on mobile */
     aside {
-        order: -1 !important; /* Move sidebar above content on mobile */
+        order: -1 !important;
     }
 }
 
-/* Cards - Mobile Optimized */
+/* Fix Section Cards for Mobile */
 @media (max-width: 768px) {
     .section-card {
         padding: 20px !important;
         margin-bottom: 20px !important;
-        border-radius: 0.75rem !important;
     }
     
     .section-card h2 {
         font-size: 1.25rem !important;
-        margin-bottom: 1rem !important;
         padding-left: 12px !important;
+        margin-bottom: 1rem !important;
     }
     
     .slo-list li {
         font-size: 0.875rem !important;
+        gap: 8px !important;
         margin-bottom: 10px !important;
-        line-height: 1.4 !important;
     }
 }
 
-/* PDF Viewer - Mobile Responsive */
+/* Fix PDF Viewer for Mobile */
 @media (max-width: 768px) {
     .viewer-box {
         padding: 8px !important;
-        margin-top: 12px !important;
+        margin-top: 15px !important;
     }
     
     .main-pdf-viewer {
@@ -282,7 +128,7 @@
     }
 }
 
-/* CTA Buttons - Touch Friendly */
+/* Fix CTA Buttons for Mobile */
 @media (max-width: 768px) {
     .cta-wrap {
         padding: 25px 0 !important;
@@ -290,7 +136,7 @@
     
     .btn-premium {
         padding: 14px 24px !important;
-        font-size: 0.9rem !important;
+        font-size: 0.875rem !important;
         width: 100% !important;
         justify-content: center !important;
     }
@@ -299,13 +145,9 @@
         width: 20px !important;
         height: 20px !important;
     }
-    
-    .btn-premium:active {
-        transform: scale(0.98);
-    }
 }
 
-/* FAQ Section Mobile */
+/* Fix FAQ Section for Mobile */
 @media (max-width: 768px) {
     .section-card p {
         font-size: 0.875rem !important;
@@ -313,34 +155,32 @@
     }
     
     .section-card p strong {
-        display: block;
-        margin-bottom: 5px;
+        display: block !important;
+        margin-bottom: 5px !important;
     }
 }
 
-/* Aside / Sidebar Mobile */
+/* Fix Aside/Sidebar for Mobile */
 @media (max-width: 768px) {
     aside .section-card {
         background: #f8fafc !important;
     }
     
     aside .slo-list li a {
-        display: block;
-        padding: 8px 0;
-        font-size: 0.875rem;
+        display: block !important;
+        padding: 8px 0 !important;
+        font-size: 0.875rem !important;
+    }
+    
+    aside .section-card:first-child {
+        margin-top: 0 !important;
     }
 }
 
-/* Footer Mobile Optimization */
+/* Fix Footer for Mobile */
 @media (max-width: 768px) {
-    .footer {
-        padding: 2rem 1rem !important;
-    }
-    
     .footer-container {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 2rem !important;
+        gap: 1.5rem !important;
     }
     
     .footer-column {
@@ -351,17 +191,12 @@
         justify-content: center !important;
     }
     
-    .social-link {
-        padding: 8px;
-    }
-    
     .newsletter-form {
         flex-direction: column !important;
     }
     
     .newsletter-input {
         width: 100% !important;
-        padding: 12px !important;
     }
     
     .newsletter-button {
@@ -371,56 +206,74 @@
     
     .footer-bottom {
         flex-direction: column !important;
-        gap: 1rem !important;
+        gap: 0.75rem !important;
         text-align: center !important;
     }
     
     .footer-legal-links {
         justify-content: center !important;
         flex-wrap: wrap !important;
-        gap: 1rem !important;
     }
 }
 
-/* Chapter List Mobile */
+/* Fix Chapter List for Mobile */
 @media (max-width: 768px) {
     .chapter-list {
-        grid-template-columns: repeat(2, 1fr) !important;
         gap: 0.75rem !important;
     }
 }
 
 @media (max-width: 480px) {
-    .chapter-list {
-        grid-template-columns: 1fr !important;
-    }
-    
     .chapter-link {
         padding: 12px 16px !important;
-        text-align: center;
+        text-align: center !important;
+        font-size: 0.875rem !important;
     }
 }
 
-/* Exercise Link Mobile */
+/* Fix Exercise Link for Mobile */
 @media (max-width: 768px) {
     .exercise-link {
-        display: block !important;
+        display: flex !important;
         width: 100% !important;
         max-width: 100% !important;
         text-align: center !important;
-        padding: 14px !important;
-        margin: 0 auto !important;
-        font-size: 0.9rem !important;
+        padding: 14px 16px !important;
+        font-size: 0.875rem !important;
+        white-space: normal !important;
+        word-break: break-word !important;
     }
 }
 
-/* Grid Components Mobile */
+/* Fix PDF Embed for Mobile */
+@media (max-width: 768px) {
+    .pdf-embed {
+        height: 450px !important;
+    }
+    
+    .pdf-actions {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+    
+    .pdf-actions .primary-action {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .pdf-embed {
+        height: 350px !important;
+    }
+}
+
+/* Fix Grid Components for Mobile */
 @media (max-width: 768px) {
     .secondary-grid,
     .higher-secondary-grid,
     .entry-test-grid,
     .resources-grid {
-        grid-template-columns: 1fr !important;
         gap: 1rem !important;
     }
     
@@ -438,25 +291,20 @@
     .card-content-list {
         font-size: 0.875rem !important;
     }
-    
-    .card-actions {
-        flex-wrap: wrap;
-    }
 }
 
-/* Entry Test Aside Mobile */
+/* Fix Entry Test Aside for Mobile */
 @media (max-width: 768px) {
     .entry-test-aside {
         flex-direction: column !important;
         align-items: flex-start !important;
-        padding: 1rem !important;
+        gap: 1rem !important;
     }
     
     .aside-image {
         width: 100% !important;
         height: auto !important;
         max-height: 200px !important;
-        object-fit: cover !important;
     }
     
     .aside-content {
@@ -464,43 +312,21 @@
     }
 }
 
-/* About Section Mobile */
+/* Fix About Section for Mobile */
 @media (max-width: 768px) {
-    .about-container {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-    }
-    
     .about-stats {
-        grid-template-columns: 1fr !important;
-        gap: 0.75rem !important;
-    }
-    
-    .stat-card {
-        padding: 0.75rem !important;
+        gap: 1rem !important;
     }
     
     .about-image {
         height: 250px !important;
-        object-fit: cover !important;
     }
 }
 
-/* Contact Form Mobile */
+/* Fix Contact Form for Mobile */
 @media (max-width: 768px) {
-    .contact-container {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-    }
-    
-    .form-row {
-        grid-template-columns: 1fr !important;
-        gap: 1rem !important;
-    }
-    
-    .form-options-row {
-        grid-template-columns: 1fr !important;
-        gap: 1rem !important;
+    .contact-form {
+        padding: 1.25rem !important;
     }
     
     .form-actions {
@@ -513,143 +339,36 @@
         justify-content: center !important;
     }
     
-    .contact-form {
-        padding: 1rem !important;
-    }
-    
     textarea {
-        min-height: 100px;
+        min-height: 100px !important;
     }
 }
 
-/* PDF Actions Mobile */
+/* Fix Specific ID Issues */
 @media (max-width: 768px) {
-    .pdf-actions {
-        flex-direction: column !important;
-        gap: 0.75rem !important;
-    }
-    
-    .pdf-actions .primary-action {
-        width: 100% !important;
-        justify-content: center !important;
-    }
-}
-
-/* Loading States for Mobile */
-.btn-premium.loading {
-    opacity: 0.7;
-    pointer-events: none;
-    position: relative;
-}
-
-.btn-premium.loading::after {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border: 2px solid white;
-    border-top-color: transparent;
-    border-radius: 50%;
-    animation: spin 0.6s linear infinite;
-    margin-left: 10px;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* Smooth Scrolling for Mobile */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Disable Smooth Scroll for Users Who Prefer Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-    
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-
-/* Better Image Handling on Mobile */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Improved Focus States for Accessibility */
-:focus-visible {
-    outline: 2px solid #1e40af;
-    outline-offset: 2px;
-    border-radius: 4px;
-}
-
-/* Print Styles */
-@media print {
-    .hamburger-btn,
-    .menu-overlay,
-    .primary-navigation,
-    .footer,
-    .cta-wrap,
-    aside {
-        display: none !important;
-    }
-    
-    .section-card {
-        break-inside: avoid;
-        box-shadow: none;
-        border: 1px solid #ddd;
-    }
-    
-    .main-pdf-viewer {
-        height: 500px;
-    }
-}
-
-/* Fix for Specific Element Issues from Your CSS */
-@media (max-width: 786px) {
     #iidq25 {
-        padding: 0px !important;
-    }
-    
-    .pdf-embed {
-        height: 450px !important;
+        padding: 0 !important;
     }
     
     #ilnmc2 {
-        align-self: center !important;
+        font-size: 1.5rem !important;
         text-align: center !important;
-        font-size: 1.25rem !important;
+        align-self: center !important;
     }
     
     .gjs-t-border.pdf-card {
         margin: 10px !important;
     }
-}
-
-@media (max-width: 500px) {
-    #iidq25 {
-        padding: 0px !important;
-    }
     
-    .pdf-embed {
-        height: 350px !important;
-    }
-    
-    #ilnmc2 {
-        align-self: center !important;
-        text-align: center !important;
+    /* Fix any elements with large margins/padding */
+    [class*="margin-left"][class*="500"],
+    [class*="margin-right"][class*="500"] {
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 }
 
-/* Landscape Mode Optimization for Mobile */
+/* Fix Landscape Mode on Mobile */
 @media (max-width: 896px) and (orientation: landscape) {
     .main-pdf-viewer {
         height: 300px !important;
@@ -663,51 +382,104 @@ img {
         font-size: 1.5rem !important;
     }
     
-    .primary-navigation {
-        padding-top: 4rem !important;
+    .pdf-embed {
+        height: 280px !important;
     }
 }
 
-/* Dark Mode Support (Optional) */
-@media (prefers-color-scheme: dark) {
-    @media (max-width: 768px) {
-        body {
-            background-color: #0f172a;
-            color: #e2e8f0;
-        }
-        
-        .section-card,
-        .subject-card,
-        .institution-card,
-        .resource-card {
-            background-color: #1e293b !important;
-            border-color: #334155 !important;
-        }
-        
-        .section-card h2 {
-            color: #60a5fa !important;
-        }
-        
-        .btn-premium {
-            background: #2563eb !important;
-        }
-        
-        .footer {
-            background-color: #020617 !important;
-        }
-    }
-}
-
-/* Performance Optimizations */
+/* Improve Touch Targets for Mobile */
 @media (max-width: 768px) {
-    /* Reduce animations on mobile for better performance */
-    .btn-premium {
-        transition: transform 0.1s ease;
+    button, 
+    .btn-premium,
+    .nav-link,
+    .footer-link,
+    .card-button,
+    .resource-download,
+    .exercise-link,
+    .chapter-link,
+    .social-link {
+        min-height: 44px !important;
+        cursor: pointer !important;
     }
     
-    /* Hardware acceleration for smooth scrolling */
-    .primary-navigation {
-        transform: translateZ(0);
-        -webkit-transform: translateZ(0);
+    /* Prevent zoom on form inputs */
+    input, 
+    select, 
+    textarea {
+        font-size: 16px !important;
+    }
+}
+
+/* Fix Loading States for Mobile */
+@media (max-width: 768px) {
+    .btn-premium.loading {
+        opacity: 0.7;
+        pointer-events: none;
+        position: relative;
+    }
+    
+    .btn-premium.loading::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border: 2px solid white;
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: spin 0.6s linear infinite;
+    }
+    
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+/* Fix Images for Mobile */
+@media (max-width: 768px) {
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .brand-icon {
+        width: 28px !important;
+        height: 28px !important;
+    }
+}
+
+/* Fix Hover Effects for Touch Devices */
+@media (max-width: 768px) {
+    .btn-premium:active {
+        transform: scale(0.98) !important;
+        transition: transform 0.1s ease !important;
+    }
+    
+    .nav-link:active,
+    .footer-link:active {
+        opacity: 0.7;
+    }
+}
+
+/* Print Styles for Mobile */
+@media print {
+    .hamburger-btn,
+    .primary-navigation,
+    .footer,
+    .cta-wrap,
+    aside {
+        display: none !important;
+    }
+    
+    .section-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .main-pdf-viewer,
+    .pdf-embed {
+        height: 500px !important;
     }
 }

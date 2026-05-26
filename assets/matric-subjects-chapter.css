@@ -30,11 +30,27 @@
         
         .section-card { background: white; padding: 30px; border-radius: 1rem; border: 1px solid #e2e8f0; margin-bottom: 30px; }
         .section-card h2 { font-size: 1.5rem; margin-bottom: 1.5rem; color: #1e3a8a; border-left: 4px solid #1e40af; padding-left: 15px; }
-        
-        .slo-list { list-style: none; }
-        .slo-list li { margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; }
-        .slo-list li::before { content: "✓"; color: #10b981; font-weight: bold; }
+        .slo-list { 
+    list-style: none; 
+    padding-left: 0;
+}
 
+.slo-list li { 
+    margin-bottom: 12px; 
+    position: relative;
+    padding-left: 24px; /* Creates space for the checkmark */
+    font-size: 0.95rem; 
+    line-height: 1.5;
+}
+
+.slo-list li::before { 
+    content: "✓"; 
+    color: #10b981; 
+    font-weight: bold; 
+    position: absolute;
+    left: 0;
+    top: 0; /* Aligns perfectly with the first line of text */
+}
         /* PDF VIEWER ENHANCEMENTS */
         .viewer-box { background: #1e293b; border-radius: 12px; padding: 12px; margin-top: 20px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
         .main-pdf-viewer { width: 100%; height: 700px; border: none; border-radius: 6px; }

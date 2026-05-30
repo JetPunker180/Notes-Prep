@@ -427,3 +427,7 @@
         height: 500px !important;
     }
 }
+mjx-container[display="false"] {
+    display: inline-block !important;
+    overflow: visible !important;
+}

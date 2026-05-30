@@ -431,3 +431,14 @@ mjx-container[display="false"] {
     display: inline-block !important;
     overflow: visible !important;
 }
+/* Prevent MathJax elements from blowing out container widths */
+.mjx-chtml, .MathJax_Display, .MathJax {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+}
+
+/* Optional: Ensure the entire layout template prevents rogue component overflows */
+body, html {
+    overflow-x: hidden;
+}
